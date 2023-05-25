@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/parent_product"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/img_product"
+                android:background="@drawable/placeholder"
+                android:layout_width="200dp"
+                android:layout_height="270dp"/>
+
+            <TextView
+                android:id="@+id/text_product"
+                android:layout_marginTop="5dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:text=""
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/img_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/description_product"
+                android:layout_marginStart="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:ems = "9"
+                android:text=""
+                android:textSize="13dp"
+                android:layout_below="@+id/text_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/cutprice_product"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="3dp"
+                android:text=""
+                android:background="@drawable/strike_through"
+                android:textSize="12dp"
+                android:layout_below="@+id/description_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/price_product"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="3dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text=""
+                android:textSize="12dp"
+                android:layout_toRightOf="@+id/cutprice_product"
+                android:layout_below="@+id/description_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/offer_product"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/red"
+                android:text=""
+                android:textSize="12dp"
+                android:layout_toRightOf="@+id/price_product"
+                android:layout_below="@+id/description_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/bannertxt_product"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/red"
+                android:text=""
+                android:textSize="12dp"
+                android:layout_below="@+id/offer_product"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.core.widget.NestedScrollView>

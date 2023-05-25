@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/cord"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app"
+        android:paddingLeft="-10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/img1"
+                    android:background="@drawable/placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="230dp"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_below="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_ad"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/img2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/ad1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_ad"
+                android:padding="10dp"
+                android:text="WHY SHOULD YOU SHOP ON MYNTRA?"
+                android:textSize="16dp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ad1"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="6dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/img3"
+                    android:background="@drawable/placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card2"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="6dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imggif4"
+                    android:background="@drawable/placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card3"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="6dp">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/img_slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card4"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="6dp">
+
+                <ImageView
+                    android:id="@+id/img5"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card5"
+                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="6dp">
+
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/imggif6"
+                    android:background="@drawable/placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp"
+                    android:scaleType="centerCrop"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_mid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card6"/>
+
+            <RelativeLayout
+                android:id="@+id/bottom"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/recycler_mid">
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/end_text"
+        android:gravity="center|left"
+        android:textSize="13dp"
+        android:textStyle="bold"
+        android:layout_marginStart="50dp"
+        android:padding="1dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#706F6F"
+        android:text="Hello how are you?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
