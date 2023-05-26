@@ -35,6 +35,7 @@ public class CartFragment extends Fragment {
     RecyclerView recyclerView;
     RecyclerAdapter_Cart adapter_cart;
     SharedPreferences sharedPreferences;
+    TextView textView;
 
     StringRequest stringRequestcartpage;
     RequestQueue queue;
@@ -53,8 +54,8 @@ public class CartFragment extends Fragment {
         sharedPreferences= getContext().getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         String id = sharedPreferences.getString(KEY_ID,null);
         String Address=sharedPreferences.getString(KEY_ADDRESS,null);
-      /*  textView=view.findViewById(R.id.txt_cart);
-        textView.setText(Address);*/
+        textView=view.findViewById(R.id.txt_cart);
+        textView.setText(Address);
 
         recyclerView=view.findViewById(R.id.recycler_cart);
         arrayListcart = new ArrayList<>();

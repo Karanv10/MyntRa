@@ -18,11 +18,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.jjj.myntra.Fragments.AnimationCart;
 import com.jjj.myntra.Fragments.CartFragment;
 import com.jjj.myntra.Fragments.CategoryFragment;
 import com.jjj.myntra.Fragments.ExploreFragment;
@@ -38,8 +40,14 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
 
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME = "session";
+    private static final String KEY_ID = "id";
+
     //Bottom Navigation Bar
     BottomNavigationView bottomNavigationView;
+
+    FrameLayout frameLayout;
 
 
     @Override
@@ -47,6 +55,13 @@ public class MainActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sharedPreferences=this.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+
+
+
+
+        frameLayout=findViewById(R.id.bottom_container_main);
 
         drawerLayout=findViewById(R.id.drawer);
         navigationView=findViewById(R.id.navigation);
@@ -111,24 +126,28 @@ public class MainActivity extends AppCompatActivity {
 
                 if (id == R.id.mHome)
                 {
-                    loadfrag(new HomeFragment(),true);
+                    replace1(new HomeFragment());
+                    frameLayout.setVisibility(View.GONE);
                 }
 
                 else  if (id==R.id.mcategories)
                 {
 
-                    loadfrag(new CategoryFragment(),false);
+                    replace(new CategoryFragment());
+                    frameLayout.setVisibility(View.VISIBLE);
 
                 }
                 else if (id==R.id.mexplore)
                 {
 
-                    loadfrag(new ExploreFragment(),false);
+                    replace(new ExploreFragment());
+                    frameLayout.setVisibility(View.VISIBLE);
 
                 }
                 else {
-                    
-                    loadfrag(new ProfileFragment(), false);
+
+                    replace(new ProfileFragment());
+                    frameLayout.setVisibility(View.VISIBLE);
 
                 }
 
@@ -159,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Bottom Navigation Bar
-    public void loadfrag(Fragment fragment, boolean flag){
+/*    public void loadfrag(Fragment fragment, boolean flag){
 
         FragmentManager fm=getSupportFragmentManager();
         FragmentTransaction ft=fm.beginTransaction();
@@ -170,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
             ft.replace(R.id.container_demo,fragment);
             ft.commit();
 
-    }
+    }*/
 
     @Override
     public void onBackPressed() {
@@ -188,10 +207,15 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.bag:
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.profile_container_main,new CartFragment()).addToBackStack(null).commit();
+                String id = sharedPreferences.getString(KEY_ID,null);
+                if (id.equals(1)){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.profile_container_main,new CartFragment()).addToBackStack(null).commit();
+                    break;
+                }
+                else{
+                    getSupportFragmentManager().beginTransaction().replace(R.id.profile_container_main,new AnimationCart()).addToBackStack(null).commit();
 
-                break;
-
+                }
 
 
         }
@@ -199,4 +223,23 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    private  void replace (Fragment fragment){
+
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.bottom_container_main,fragment);
+        fragmentTransaction.addToBackStack(null).commit();
+
+
+    }
+
+    private  void replace1 (Fragment fragment){
+
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.container_demo,fragment);
+        fragmentTransaction.addToBackStack(null).commit();
+
+
+    }
+
 }

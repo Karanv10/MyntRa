@@ -294,7 +294,6 @@ public class Product_Sec_Fragment extends Fragment {
         });
         requestQueue.add(stringRequestdeliveryp);
 
-
         //Add To Cart
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -310,7 +309,7 @@ public class Product_Sec_Fragment extends Fragment {
                 String cdelivery=txt_p7.getText().toString();
 
                 String csize=size.getText().toString();
-           //     String cmeasure=measure.getText().toString();
+           //   String cmeasure=measure.getText().toString();
 
                 SharedPreferences.Editor editor=sharedPreferences.edit();
                 String id = sharedPreferences.getString(KEY_ID,null);

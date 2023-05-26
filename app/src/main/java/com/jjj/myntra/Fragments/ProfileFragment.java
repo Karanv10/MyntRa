@@ -41,6 +41,7 @@ public class ProfileFragment extends Fragment {
     private static final String KEY_ID = "id";
     private static final String KEY_ADDRESS = "address";
     private static final String KEY_NAME = "name";
+    private static final String KEY_MOB = "mobile";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -136,8 +137,8 @@ public class ProfileFragment extends Fragment {
 
                                         editor.putString(KEY_ID,id);
                                         editor.putString(KEY_NAME,nm);
-                                        // editor.putString(KEY_EMAIL,em);
-                                        // editor.putString(KEY_MOB,mo);
+                                       // editor.putString(KEY_EMAIL,es);
+                                        editor.putString(KEY_MOB,mo);
                                         editor.putString(KEY_ADDRESS,ad);
                                         editor.commit();
 
