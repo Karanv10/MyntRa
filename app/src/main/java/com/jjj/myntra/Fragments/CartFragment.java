@@ -65,6 +65,7 @@ public class CartFragment extends Fragment {
             @Override
             public void onResponse(String response) {
 
+
                 try {
                     JSONArray jsonArray = new JSONArray(response);
                     for (int i=0; i<jsonArray.length(); i++) {
